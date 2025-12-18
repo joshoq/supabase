@@ -42,7 +42,7 @@ services:
       DEFAULT_PROJECT_NAME: ${STUDIO_DEFAULT_PROJECT}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
 
-      SUPABASE_URL: http://kong:8000
+      SUPABASE_URL: http://kong:8001
       SUPABASE_PUBLIC_URL: ${SUPABASE_PUBLIC_URL}
       SUPABASE_ANON_KEY: ${ANON_KEY}
       SUPABASE_SERVICE_KEY: ${SERVICE_ROLE_KEY}
@@ -65,7 +65,7 @@ services:
     image: kong:2.8.1
     restart: unless-stopped
     ports:
-      - ${KONG_HTTP_PORT}:8000/tcp
+      - ${KONG_HTTP_PORT}:8001/tcp
       - ${KONG_HTTPS_PORT}:8443/tcp
     volumes:
       # https://github.com/supabase/supabase/issues/12661
